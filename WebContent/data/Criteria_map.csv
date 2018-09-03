@@ -1,0 +1,12 @@
+map_id,id,col_name,op,val,pts
+1,1,XII,gt,80,5
+2,1,cgpa,gt,8,5
+3,1,skill,eq,Javascript;Java;PHP;HTML & CSS,15
+4,2,XII,gt,80,5
+5,2,college,lk,IIT,20
+6,2,cgpa,gt,8,10
+7,2,skill,eq,C++;C;Objective C,15
+8,2,specialization,eq,CSE;EE,5
+9,3,XII,gt,80,5
+10,3,cgpa,gt,9,15
+11,3,college,lk,IIM,20

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="lib/jquery.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/alasql.js"></script>
+<script src="lib/purl.js"></script>
+<script src="js/db.js"></script>
+<script src="lib/jquery-ui.js"></script>
+
+ <link rel="stylesheet" href="css/jquery-ui.css">
+
+<!-- Bootstrap stylesheet -->
+<link href="css/bootstrap.css" rel="stylesheet" />
+<!-- bootstrap widget theme -->
+<link rel="stylesheet" href="css/theme.bootstrap.css">
+
+<!-- tablesorter plugin -->
+<script src="js/jquery.tablesorter.js"></script>
+<!-- tablesorter widget file - loaded after the plugin -->
+<script src="js/jquery.tablesorter.widgets.js"></script>
+
+<!-- pager plugin -->
+<script src="js/jquery.tablesorter.pager.js"></script>
+
+<!-- Editabel CSS & JS file -->
+<link href="css/bootstrap-editable.css" rel="stylesheet"/>
+<script src="lib/bootstrap-editable.min.js"></script>
+<script src="lib/jquery.quicksearch.js"></script>
+
+
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport" content="width=device-width">
+<title>COMPANY</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">COMPANY</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a onclick = "sessionStorage.clear();" href="index.html">Personal Info
+							Management</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>
+							Settings <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a onclick="window.location.reload(true); sessionStorage.clear();"><span
+									class="glyphicon glyphicon-refresh"></span> Reload</a></li>
+							<li><a onclick="DB.init(); sessionStorage.clear();"><span
+									class="glyphicon glyphicon-repeat"></span> Init DB</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a onclick="DB.remove(); sessionStorage.clear();"><span
+									class="glyphicon glyphicon-trash"></span> Delete DB</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<div class="container" id = "search">
+			<form action="performance.html" class="form-inline text-center">
+			<!-- Added Business Class Selection -->
+				<div class="dropdown">
+				  <button class="dropbtn btn btn-primary">Performance Review &nbsp;<span class="caret"></span></button>
+				  <div id = "BO" class="dropdown-content" style = "z-index: 10;">
+  				    <a href="directory.html" id = "perf">Employee Directory</a>
+				    <a href="performance.html" id = "perf">Performance Review</a>
+				    <a href="recruitment.html" id = "rec">Recruitment Management</a>
+				  </div>
+				</div>
+				<div class="form-group has-feedback">
+					<input id="q1" name="q1" type="text" class="form-control hasclear"
+						placeholder="Search for any Employee Info">
+					<span id="searchclear" class="glyphicon glyphicon-remove-circle form-control-feedback" style="display:none"></span>
+				</div>
+				<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-search"></span> Search
+				</button>
+			</form>
+		<hr>
+<!-- Assign Grade Area -->
+		<div id ="grade-area" class="clearfix" style="margin: 10px;"  >	
+			<a id="add-grade" href="#" class="btn btn-xs btn-success pull-left" style="margin-right:10px;font-size: 12px; width:150px;"><span
+				class="glyphicon glyphicon-plus"></span>Add Grade Breakup</a>
+
+			<a id="rem-grade" href="#" class="btn btn-xs btn-danger pull-left" style="margin-right:10px;font-size: 12px; width:160px ;text-align:left"><span
+				class="glyphicon glyphicon-minus"></span>Remove Grade Breakup</a>
+				
+			<a id="opener" href="#" class="btn btn-xs btn-default pull-left" style="font-size: 12px;text-align:left"><span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="View Default Grade Breakups!"></span></a>
+				  
+			<span id="noerror" style="margin-left:50px;display:none ; color:green; font-size: 15px;font-weight: bold;font-style: italic;" ></span>
+		  	 <span id="error" style="margin-left:50px;display:none; color:red; font-size: 15px;font-weight: bold;font-style: italic;" ></span>
+
+			<!-- <button class="btn btn-default btn-xs" id="opener" style="font-size: 12px;" >View Default Breakups</button> -->
+			<div id="dialog" class="tab-pane active" title="Default Grade Breakups"  style="display:none; font-size: 13px">
+				<table class="table">
+					<tbody>
+						<!-- 					<tr class="breadcrumb">
+							<td><b>ASE:</b></td>
+							<td><b>A-20% B-30% C-50% </b></td>
+						</tr>
+						<tr >
+							<td><b>SSE:</b></td>
+							<td><b>A-20% B-30% C-50% </b></td>
+						</tr> -->
+						<tr class="breadcrumb">
+							<td><b>SE</b></td>
+							<td><b>A-10% B-20% C-30% D-40%</b></td>
+						</tr>	
+						<tr >
+							<td><b>Designer</b></td>
+							<td><b>A-20% B-30% C-50% </b></td>
+						</tr>
+						<tr class="breadcrumb">
+							<td><b>Tester</b></td>
+							<td><b>A-20% B-30% C-30% D-20% </b></td>
+						</tr>
+						<tr >
+							<td><b>TL</b></td>
+							<td><b>A-20% B-20% C-60% </b></td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- <ol class="breadcrumb" style ="text-align: center;">
+					<li>ASE: A-10%  B-20%  C=30%  D=40%</li>
+					<li>SSE: A-10%  B-20%  C=30%  D=40%</li>
+					<li>SE: A-10%  B-20%  C=30%  D=40%</li>
+					<li>Analyst: A-10%  B-20%  C=30%  D=40%</li>
+					<li>Tester: A-10%  B-20%  C=30%  D=40%</li>
+					<li>Designer: A-10%  B-20%  C=30%  D=40%</li>
+					<li>TL: A-10%  B-20%  C=30%  D=40%</li>
+				</ol> -->
+			</div>
+<!--	<a href="emp-form.html" class="btn btn-sm btn-success pull-right"><span
+				class="glyphicon glyphicon-plus"></span> New</a> -->
+			<div class="pull-right"  id="assign-area" style="float:right;"  >				
+
+			    <button id ="report" type="submit" class="btn btn-default" style="margin-left:5px; float:right;" data-toggle="tooltip" title="Generate Report!">
+					<span class="glyphicon glyphicon-print"></span> 
+				</button>	
+				<button id ="assign" type="submit" class="btn btn-primary" style="float:right;>
+					<span class="glyphicon glyphicon-ok"></span> Assign Grades
+				</button>	
+		
+	
+			</div>
+
+					<!-- <hr> -->
+		</div>
+<!-- Grade Breakup Area -->
+		<div id="panelSteps" class="panel panel-default">
+			<ol id="list" class="item-steps list-group" >
+			<!-- 	<li class="list-group-item" >
+					<div class="dropdown" id="div-desig">
+					<label for="sel1">Designation:</label>
+						<select class="form-inline" id="sel1">
+						<option id = "XII">XII %</option>
+						<option id = "college">College</option>
+						<option id = "specialization ">Specialization</option>
+						<option id = "cgpa" >CGPA</option>
+						<option id = "skill" >Skill</option>
+						</select>
+					</div>
+
+					<div class="dropdown" id="div-A" style="margin-left:15px;">
+					<label for="A">A:</label>
+					<input type="text" class ="input-xs" id="A" placeholder="A %" style="width:40px;">
+					</div>
+					
+					<div class="dropdown" id="div-B" style="margin-left:15px;">
+					<label for="B">B:</label>
+					<input type="text" class ="input-xs" id="B" placeholder="B %" style="width:40px;">
+					</div>
+
+					<div class="dropdown" id="div-add" style="margin-left:15px; ">
+						<span  class="add-option glyphicon glyphicon-plus-sign"></span> 
+					</div>
+				</li> -->
+
+			</ol>
+		</div>
+	<!-- 	<div class="grade-breakup-area form-inline" style= "display:block;">
+				<label for="A"  style="float:left;">A:</label>
+				<input type="text" class="form-control input-sm" id="A" placeholder = "A %" style="width:50px; padding:1 1 1 1; float:left;">
+		</div>	 -->
+		<!-- <hr style="visibility:hidden"> -->
+<!-- Employee Performance -->
+
+  		<button class="reset-perf btn btn-xs btn-default" type="button" style="margin:0;"><span class="glyphicon glyphicon-repeat" style="font-size: 10px;"></span>&nbsp;Reset Filters</button>
+	  	<label class="switch" style="float: right; margin-bottom: 10px">
+	      <input id = "checkbox" type="checkbox" class="switch-input" >
+	      <span class="switch-label" data-on="On" data-off="Off"></span>
+	      <span class="switch-handle"></span>
+	    </label>
+  		<span style="float: right; font-style:italic;font-weight: bold; font-size:12px;margin-top:5px;">Use Bias Correction</span>
+    	<table id="table-perf" class="table table-striped">
+			<thead id="thead-perf">
+			</thead>
+			<tbody id="tbody-perf"></tbody>
+		</table>
+	<div id="pager" class="pager" style="text-align:center; display:none">
+		<form>
+			<img src="img/first.png" class="first"/>
+			<img src="img/prev.png" class="prev"/>
+			<input type="text" class="pagedisplay"/>
+			<img src="img/next.png" class="next"/>
+			<img src="img/last.png" class="last"/>
+			<select class="pagesize">
+				<option selected="selected" value="10">10</option>
+				<option value="20">20</option>
+				<option value="30">30</option>
+				<option value="40">40</option>
+				<option value="50">50</option>
+				<option value="100">100</option>
+				<option value="200">200</option>
+			</select>
+		</form>
+	</div>
+	</div>
+	<script src="js/performance.js"></script>
+</body>
+</html>

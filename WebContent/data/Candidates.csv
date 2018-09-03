@@ -1,0 +1,100 @@
+id,emp_id,name,XII,college,specialization,cgpa,skill1,skill2,points,selected
+1,WAP00104,北川　公一,60,IIT Bombay ,Mech,7.4,C,Java,0,No
+2,WAP00105,Bucha0n Pearson,97,Thapar University ,EE,6.4,C++,C,0,No
+3,WAP00106,Stokes Mosley,51,BITS Pilani,Mech,7.6,C#,C++,0,No
+4,WAP00107,Consuelo Cohen,58,NIT Rourkela ,BT,6.7,Java,C#,0,No
+5,WAP00108,Luisa Brown,95,BITS Pilani ,Electronics,5.9,Haskell,Java,0,No
+6,WAP00110,鶴岡　勝彦,73,MSRIT Bangalore ,Civil,7.3,ML,Haskell,0,No
+7,WAP00111,谷内　梨央,83,IIT Kanpur ,Industrial,9,R,ML,0,No
+8,WAP00112,小山田　正和,97,VNIT Nagpur ,Mathematics,9,Python,R,0,No
+9,WAP00117,Shan0 Taylor,69,MIT Manipal ,Civil,8.5,Matlab,Python,0,No
+10,WAP00118,李 男皆,64,IIT-BHU Varanasi ,Aero,7.8,Shell,Matlab,0,No
+11,WAP00119,Matthews Walls,50,IIM K ,Mathematics,7.6,Ruby,Shell,0,No
+12,WAP00148,May Walker,81,NIT Surathkal  ,CSE,8.3,PHP,Ruby,0,No
+13,WAP00152,Mcgee Munoz,55,NSIT Delhi ,Electronics,9.2,Javascript,PHP,0,No
+14,WAP00155,Salas Rollins,59,PSG Coimbatore ,Aero,8.6,Objective C,Javascript,0,No
+15,WAP00161,Hogan Duffy,99,NIT Warangal ,Chemical,9,HTML & CSS,Objective C,0,No
+16,WAP00163,Ber0dine Hewitt,66,NIT Trichi ,CSE,6.8,C,HTML & CSS,0,No
+17,WAP00165,陈 奕单,83,IIT-BHU Varanasi ,Aero,7.8,C++,C,0,No
+18,WAP00166,Tucker Battle,95,MSRIT Bangalore ,BT,7.3,C#,C++,0,No
+19,WAP00167,Juarez Sellers,60,IIM L,Chemical,7.5,Java,C#,0,No
+20,WAP00169,Tyler Delgado,81,VIT Vellore ,CSE,7.6,Haskell,Java,0,No
+21,WAP00170,Owen Braund,94,IIT Delhi ,Chemical,8,ML,Haskell,0,No
+22,WAP00171,John Cumings,74,IIT Guwahati ,Electronics,7.1,R,ML,0,No
+23,WAP00172,Laina Heikkinen,73,BIT Ranchi ,BT,8,Python,R,0,No
+24,WAP00173,Jacques Futrelle,66,IIT Kanpur  ,Industrial,5.3,Matlab,Python,0,No
+25,WAP00174,William Allen,80,PSG Coimbatore ,Mathematics,5.6,Shell,Matlab,0,No
+26,WAP00175,James Moran,95,DTU Delhi ,Electronics,6.2,Ruby,Shell,0,No
+27,WAP00176,Timothy McCarthy,89,BIT Ranchi ,CSE,9.5,PHP,Ruby,0,No
+28,WAP00177,Gosta Palsson,97,BIT Sindri ,Physics,7.8,Javascript,PHP,0,No
+29,WAP00178,Oscar Johnson,52,IIT Kharagpur ,Civil,8.8,Objective C,Javascript,0,No
+30,WAP00179,Nicholas Nasser,97,IIT Guwahati,Electronics,8.6,HTML & CSS,Objective C,0,No
+31,WAP00180,Marguerite Sandstrom,72,INTUH Hyderabad ,Mathematics,5.5,C,HTML & CSS,0,No
+32,WAP00181,Elizabeth Bonnell,72,NIT Warangal ,EE,9.2,C++,ML,0,No
+33,WAP00182,William Saundercock,54,NIT Durgapur ,BT,9,C#,R,0,No
+34,WAP00183,Anders Andersson,91,NIT Rourkela ,Mech,7.7,Java,Python,0,No
+35,WAP00184,Hulda Vestrom,58,BIT Sindri ,Electronics,7,Haskell,Matlab,0,No
+36,WAP00185,Eugene Rice,66,BITS Goa ,CSE,9,ML,Java,0,No
+37,WAP00186,Charles Williams,57,IIT Madras ,Industrial,9.2,R,Haskell,0,No
+38,WAP00187,Julius Vander,92,IIT-BHU Varanasi ,EE,6.5,Python,ML,0,No
+39,WAP00188,Fatima Masselmani,74,VIT Vellore ,Chemical,8,Matlab,R,0,No
+40,WAP00189,Joseph Fynney,61,NIE Mysore ,Mathematics,7.6,Shell,Python,0,No
+41,WAP00190,Lawrence Beesley,97,NIT Calicut,BT,5.3,Ruby,Matlab,0,No
+42,WAP00191,AnnaAnnie McGowan,93,IIT Delhi ,Mathematics,7.8,PHP,Shell,0,No
+43,WAP00192,William Sloper,67,DTU Delhi ,Aero,7.6,Javascript,Ruby,0,No
+44,WAP00193,Torborg Palsson,50,BIT Ranchi ,Civil,7,Objective C,PHP,0,No
+45,WAP00194,Carl Asplund,72,INTUH Hyderabad ,Physics,8.3,HTML & CSS,Javascript,0,No
+46,WAP00195,Farred Emir,89,MIT Pune ,EE,7.2,C,Objective C,0,No
+47,WAP00196,Charles Fortune,66,MIT Manipal ,Mathematics,5.8,C++,HTML & CSS,0,No
+48,WAP00197,EllenNellie O,92,BIT Ranchi ,Mathematics,7.6,C#,C,0,No
+49,WAP00198,Lalio Todoroff,71,MSRIT Bangalore ,Civil,5.2,Java,C++,0,No
+50,WAP00199,Don Uruchurtu,75,PSG Coimbatore ,Civil,6.2,Haskell,C#,0,No
+51,WAP00200,William Spencer,89,BIT Sindri ,Physics,6.9,ML,Java,0,No
+52,WAP00201,Mary Glynn,83,MIT Manipal ,CSE,7.9,R,Haskell,0,No
+53,WAP00202,Edward Wheadon,69,IIT Bombay ,Civil,8.4,Python,ML,0,No
+54,WAP00203,Edgar Meyer,96,IIT Kanpur ,Industrial,7.8,Matlab,R,0,No
+55,WAP00204,Alexander Holverson,86,DTU Delhi ,CSE,9,Shell,Python,0,No
+56,WAP00205,Hanna Mamee,99,IIT Delhi ,BT,8,Ruby,Matlab,0,No
+57,WAP00206,Ernest Cann,67,NIT Durgapur ,Mech,9.3,PHP,Shell,0,No
+58,WAP00207,Augusta Vander,84,VNIT Nagpur ,Chemical,5.2,Javascript,Ruby,0,No
+59,WAP00208,Jamila Nicola,78,IIT Kanpur  ,Physics,9.7,Objective C,PHP,0,No
+60,WAP00209,Johan Ahlin,96,IIT Kharagpur ,Aero,8.3,HTML & CSS,Javascript,0,No
+61,WAP00210,William Turpin,97,Thapar University ,BT,8.5,C,Objective C,0,No
+62,WAP00211,Theodor Kraeff,94,IIM A ,Physics,6.5,C++,HTML & CSS,0,No
+63,WAP00212,Simonne Laroche,51,Nirma University  ,Mech,5.7,C#,ML,0,No
+64,WAP00213,Margaret Devaney,62,IIT Kanpur ,Physics,8.9,Java,R,0,No
+65,WAP00214,William Rogers,92,BITS Pilani ,EE,9.4,Haskell,Python,0,No
+66,WAP00215,Denis Lennon,90,PSG Coimbatore ,Physics,8.3,ML,Matlab,0,No
+67,WAP00216,Bridget O,84,NIT Rourkela ,Electronics,6.6,R,C#,0,No
+68,WAP00217,Youssef Samaan,65,Thapar University ,Aero,9.7,Python,Java,0,No
+69,WAP00218,Josef Arnold,94,IIT Kharagpur ,Electronics,9.2,Matlab,Haskell,0,No
+70,WAP00219,Juha Panula,64,IIT Bombay ,CSE,7.9,Shell,ML,0,No
+71,WAP00220,Richard Nosworthy,94,IIM L,Physics,8.2,Ruby,R,0,No
+72,WAP00221,Henry Harper,87,IIM L,Civil,9,PHP,Python,0,No
+73,WAP00222,Lizzie Faunthorpe,98,IIM A ,Mech,7.6,Javascript,Matlab,0,No
+74,WAP00223,Engelhart Ostby,85,NIT Warangal ,Industrial,6.3,Objective C,Shell,0,No
+75,WAP00224,Hugh Woolner,95,NIT Surathkal  ,BT,5.3,HTML & CSS,Ruby,0,No
+76,WAP00225,Emily Rugg,95,IIT Guwahati ,EE,6.6,C,PHP,0,No
+77,WAP00226,Mansouer Novel,68,IIT Guwahati,Electronics,9.6,C++,Javascript,0,No
+78,WAP00227,Constance West,88,DTU Delhi ,Chemical,9.2,C#,Objective C,0,No
+79,WAP00228,William Goodwin,58,MIT Pune ,Physics,7.3,Java,HTML & CSS,0,No
+80,WAP00229,Orsen Sirayanian,59,NIT Calicut,Physics,5.8,Haskell,C,0,No
+81,WAP00230,Amelie Icard,57,IIT Madras ,Aero,8.8,ML,C++,0,No
+82,WAP00231,Henry Harris,81,IIT Kanpur  ,EE,7.6,R,C#,0,No
+83,WAP00232,Harald Skoog,82,IIM K ,Civil,9.2,Python,Java,0,No
+84,WAP00233,Albert Stewart,86,NIT Surathkal  ,Electronics,9.8,Matlab,Haskell,0,No
+85,WAP00234,Gerios Moubarek,50,NIT Calicut,Electronics,9,Shell,ML,0,No
+86,WAP00235,Ernest Crease,98,INTUH Hyderabad ,Electronics,9.6,Ruby,R,0,No
+87,WAP00236,Erna Andersson,91,IIT Guwahati,Aero,6.5,PHP,Python,0,No
+88,WAP00237,Vincenz Kink,91,IIM K ,CSE,9.2,Javascript,Matlab,0,No
+89,WAP00238,Stephen Jenkin,73,BITS Goa ,BT,5.6,Objective C,Shell,0,No
+90,WAP00239,Lillian Goodwin,51,Thapar University ,CSE,7.2,HTML & CSS,Ruby,0,No
+91,WAP00240,Ambrose Hood,66,MSRIT Bangalore ,Industrial,5.2,C,PHP,0,No
+92,WAP00241,Apostolos Chronopoulos,90,NIE Mysore ,Electronics,8.3,C++,Javascript,0,No
+93,WAP00242,Lee Bing,79,BIT Ranchi ,Mech,5.5,C#,Objective C,0,No
+94,WAP00243,Sigurd Moen,51,INTUH Hyderabad ,EE,6.4,Java,HTML & CSS,0,No
+95,WAP00244,Ivan Staneff,50,VIT Vellore ,Aero,5.6,Haskell,ML,0,No
+96,WAP00245,Rahamin Moutal,94,NIT Trichi ,Mech,9.8,ML,R,0,No
+97,WAP00246,Alden Caldwell,78,BITS Goa ,Mech,8,R,Python,0,No
+98,WAP00247,Elizabeth Dowdell,67,MIT Pune ,Chemical,8.4,Python,Matlab,0,No
+99,WAP00248,Achille Waelens,88,IIT Guwahati,Aero,5.7,Matlab,C++,0,No

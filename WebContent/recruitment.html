@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="lib/jquery.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/alasql.js"></script>
+<script src="lib/purl.js"></script>
+<script src="js/db.js"></script>
+<script src="lib/jquery-ui.js"></script>
+<script src="lib/jquery.quicksearch.js"></script>
+
+ <link rel="stylesheet" href="css/jquery-ui.css">
+
+<!-- Bootstrap stylesheet -->
+<link href="css/bootstrap.css" rel="stylesheet" />
+<!-- bootstrap widget theme -->
+<link rel="stylesheet" href="css/theme.bootstrap.css">
+
+<!-- tablesorter plugin -->
+<script src="js/jquery.tablesorter.js"></script>
+<!-- tablesorter widget file - loaded after the plugin -->
+<script src="js/jquery.tablesorter.widgets.js"></script>
+
+<!-- pager plugin -->
+<script src="js/jquery.tablesorter.pager.js"></script>
+
+<!-- Editabel CSS & JS file -->
+<link href="css/bootstrap-editable.css" rel="stylesheet"/>
+<script src="lib/bootstrap-editable.min.js"></script>
+
+
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport" content="width=device-width">
+<title>COMPANY</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">COMPANY</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a onclick = "sessionStorage.clear();" href="index.html">Personal Info
+							Management</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>
+							Settings <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a onclick="window.location.reload(true); sessionStorage.clear();"><span
+									class="glyphicon glyphicon-refresh"></span> Reload</a></li>
+							<li><a onclick="DB.init(); sessionStorage.clear();"><span
+									class="glyphicon glyphicon-repeat"></span> Init DB</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a onclick="DB.remove(); sessionStorage.clear();"><span
+									class="glyphicon glyphicon-trash"></span> Delete DB</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<div class="container" id = "search">
+			<form action="recruitment.html" class="form-inline text-center">
+			<!-- Added Business Class Selection -->
+				<div class="dropdown">
+				  <button class="dropbtn btn btn-primary">Recruitment Management <span class="caret"></span></button>
+				  <div id = "BO" class="dropdown-content" style = "z-index: 10;">
+  				    <a href="directory.html" id = "perf">Employee Directory</a>
+				    <a href="performance.html" id = "perf">Performance Review</a>
+				    <a href="recruitment.html" id = "rec">Recruitment Management</a>
+				  </div>
+				</div>
+				<div class="form-group has-feedback">
+					<input id="q1" name="q1" type="text" class="form-control hasclear"
+						placeholder="Search for any Employee Info">
+					<span id="searchclear" class="glyphicon glyphicon-remove-circle form-control-feedback" style="display: none"></span>
+					<!-- style="color:#ccc" -->
+				</div>
+				<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-search"></span> Search
+				</button>
+			</form>
+		<hr>
+
+<!-- Apply Criteria  Area -->
+		<div id ="criteria-area" class="clearfix" style="margin: 10px;"  >	
+		
+			<a id="add-criteria" href="#" class="btn btn-xs btn-success pull-left" style="margin-right:10px; font-size: 12px; width:120px;"><span
+				class="glyphicon glyphicon-plus"></span>Add Criteria</a>
+
+			<a id="rem-criteria" href="#" class="btn btn-xs btn-danger pull-left" style="font-size: 12px; width:120px ;text-align:left"><span
+				class="glyphicon glyphicon-minus"></span>Remove Criteria</a>
+				
+			<!-- <a href="emp-form.html" class="btn btn-sm btn-success pull-right"><span
+							class="glyphicon glyphicon-plus"></span> New</a> -->
+
+			<div class="pull-right"  id="select-button" style="float:right;"  >
+				<button id ="select-cand" type="select" class="btn btn-primary">
+					<span class="glyphicon glyphicon-ok"></span> Select Candidates
+				</button>	
+				<button id ="print" type="submit" class="btn btn-default" style="margin-left:5px; float:right;"  data-toggle="tooltip" title="Generate Report!">
+					<span class="glyphicon glyphicon-print"></span>
+				</button>	
+			</div>
+
+			<div class="dropdown" style="float:left; margin-left: 10px;">
+			  <button id="select-default-button" class="btn btn-xs btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Select Default Criteria
+			  <span class="caret"></span></button>
+			  <ul id="select-default" class="dropdown-menu">
+<!-- 			    <li id="1"><a href="#">Web Developer</a></li>
+			    <li id="2"><a href="#">Systems Engineer</a></li>
+			    <li id="3"><a href="#">Sales Person</a></li> -->
+			  </ul>
+  			</div>	
+  			<div class="form-inline" style="margin-left:10px;">	
+			  <input type="text" class="form-control input-xs" id="n_emp" placeholder="#Candidates" style ="margin-left:10px ;width:100px ; ">
+				  <span id="noerror" style="display:none ; color:green; font-size: 14px;font-weight: bold;font-style: italic;" >Criteria Successfully Added !!!</span>
+			  	  <span id="error" style="display:none; color:red; font-size: 14px;font-weight: bold;font-style: italic;" >Criteria could not be added as it already exists!!!</span>
+			</div>
+
+		</div>		
+  			<div id="panelSteps" class="panel panel-default">
+			  <!-- <div class="panel-heading hidden-print">Actions</div> -->
+			  <ol id="list" class="item-steps list-group">
+				<!-- 			    <li class="list-group-item">
+						    			<div class="dropdown" id="div-column">
+									    	<label for="sel1" style="text-align:center">Column:</label>
+									        <select class="form-inline" id="sel1">
+												<option>XII %</option>
+											    <option>College</option>
+											    <option>Specialization</option>
+											    <option>CGPA</option>
+											    <option>Skill-1</option>
+											    <option>Skill-2</option>
+									      	</select>
+						  			</div>	
+						  			<div class="dropdown" id="div-operator" style="margin-left:15px;">
+									    	<label for="sel2" style="text-align:center">Operator:</label>
+									        <select class="form-inline" id="sel2" style=" text-align: center">
+												<option> = </option>
+											    <option> < </option>
+											    <option> <=</option>
+											    <option> > </option>
+											    <option> >= </option>
+									      	</select>
+						  			</div>	
+
+						  			<div class="dropdown" id="div-value" style="margin-left:15px;">
+									    	<label for="sel3" sytle="text-align:left;">Value:</label>
+								  			<input type="text" class ="input-xs" id="sel3" placeholder="Value" style ="float:left width:100px ;">
+						  			</div>	
+
+						  			<div class="dropdown" id="div-points" style="margin-left:15px;">
+									    	<label for="sel4" sytle="text-align:left">Points:</label>
+								  			<input type="text" class ="input-xs" id="sel4" placeholder="Points" style ="width:100px ;">
+						  			</div>
+
+				  				</li> -->
+				</ol>
+			</div>
+
+<!-- Employee Recruitment -->
+  		<button class="reset-rec btn btn-xs btn-default" type="button" style="margin:0 ;s"> <span class="glyphicon glyphicon-repeat" style="font-size: 10px;"></span>&nbsp;Reset Filters</button>
+		<table id="table-rec" class="table table-striped">
+			<thead id="thead-rec">
+			</thead>
+			<tbody id="tbody-rec"></tbody>
+		</table>
+	<div id="pager" class="pager" style="text-align:center; display:none">
+		<form>
+			<img src="img/first.png" class="first"/>
+			<img src="img/prev.png" class="prev"/>
+			<input type="text" class="pagedisplay"/>
+			<img src="img/next.png" class="next"/>
+			<img src="img/last.png" class="last"/>
+			<select class="pagesize">
+				<option selected="selected" value="10">10</option>
+				<option value="20">20</option>
+				<option value="30">30</option>
+				<option value="40">40</option>
+				<option value="50">50</option>
+				<option value="100">100</option>
+				<option value="200">200</option>
+			</select>
+		</form>
+	</div>
+	</div>
+<script src="js/recruitment.js"></script>
+</body>
+</html>

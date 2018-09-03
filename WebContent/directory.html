@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="lib/jquery.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/alasql.js"></script>
+<script src="lib/purl.js"></script>
+<script src="js/db.js"></script>
+<script src="lib/jquery-ui.js"></script>
+
+ <link rel="stylesheet" href="css/jquery-ui.css">
+
+<!-- Bootstrap stylesheet -->
+<link href="css/bootstrap.css" rel="stylesheet" />
+<!-- bootstrap widget theme -->
+<link rel="stylesheet" href="css/theme.bootstrap.css">
+
+<!-- tablesorter plugin -->
+<script src="js/jquery.tablesorter.js"></script>
+<!-- tablesorter widget file - loaded after the plugin -->
+<script src="js/jquery.tablesorter.widgets.js"></script>
+
+<!-- pager plugin -->
+<script src="js/jquery.tablesorter.pager.js"></script>
+
+<!-- Editabel CSS & JS file -->
+<link href="css/bootstrap-editable.css" rel="stylesheet"/>
+<script src="lib/bootstrap-editable.min.js"></script>
+<script src="lib/jquery.quicksearch.js"></script>
+
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport" content="width=device-width">
+<title>COMPANY</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">COMPANY</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a onclick = "sessionStorage.clear();" href="index.html">Personal Info
+							Management</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>
+							Settings <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a onclick="window.location.reload(true); sessionStorage.clear();"><span
+									class="glyphicon glyphicon-refresh"></span> Reload</a></li>
+							<li><a onclick="DB.init(); sessionStorage.clear();"><span
+									class="glyphicon glyphicon-repeat"></span> Init DB</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a onclick="DB.remove(); sessionStorage.clear();"><span
+									class="glyphicon glyphicon-trash"></span> Delete DB</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<div class="container" id = "search">
+			<form action="directory.html" class="form-inline text-center">
+			<!-- Added Business Class Selection -->
+				<div class="dropdown">
+				  <button class="dropbtn btn btn-primary">Employee Directory &nbsp;<span class="caret"></span></button>
+				  <div id = "BO" class="dropdown-content" style = "z-index: 10;">
+  				    <a href="directory.html" id = "perf">Employee Directory</a>
+				    <a href="performance.html" id = "perf">Performance Review</a>
+				    <a href="recruitment.html" id = "rec">Recruitment Management</a>
+				  </div>
+				</div>
+				<div class="form-group has-feedback">
+					<input id="q1" name="q1" type="text" class="form-control hasclear"
+						placeholder="Search any Employee Info">
+					<span id="searchclear" class="glyphicon glyphicon-remove-circle form-control-feedback" style="display:none"></span>
+				</div>
+				<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-search"></span> Search
+				</button>
+			</form>
+		<hr>
+
+<!-- Employee Directory -->
+  		<button class="reset-emps btn btn-xs btn-default" type="button" style="margin:0 ;"><span class="glyphicon glyphicon-repeat" style="font-size: 10px;"></span>&nbsp;Reset Filters
+	    </button>
+		<table id="table-emps" class="table table-striped">
+			<thead id="thead-emps">
+			</thead>
+			<tbody id="tbody-emps"></tbody>
+		</table>
+	<div id="pager" class="pager" style="text-align:center; display:none">
+		<form>
+			<img src="img/first.png" class="first"/>
+			<img src="img/prev.png" class="prev"/>
+			<input type="text" class="pagedisplay"/>
+			<img src="img/next.png" class="next"/>
+			<img src="img/last.png" class="last"/>
+			<select class="pagesize">
+				<option selected="selected" value="10">10</option>
+				<option value="20">20</option>
+				<option value="30">30</option>
+				<option value="40">40</option>
+				<option value="50">50</option>
+				<option value="100">100</option>
+				<option value="200">200</option>
+			</select>
+		</form>
+	</div>
+	</div>
+	<script src="js/directory.js"></script>
+</body>
+</html>
